@@ -1,0 +1,82 @@
+@import "../../../styles/variables";
+
+#header {
+  background: $background-header;
+  width: calc(100% - 40px);
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+  > div.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 10px;
+
+    > svg {
+      width: 20px;
+      height: auto;
+      fill: white;
+    }
+
+    > input {
+      background: transparent;
+      color: white;
+      border: none;
+      outline: none;
+    }
+  }
+
+  > div.infos {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    > div:first-child {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+
+      > div {
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        align-items: center;
+        cursor: pointer;
+        border: 1px solid white;
+        padding: 5px;
+        border-radius: 10px;
+
+        > img {
+          width: 20px;
+          height: auto;
+          fill: white;
+        }
+
+        > span {
+          color: white;
+        }
+      }
+    }
+
+    > div.user {
+      border-radius: 50%;
+      overflow: hidden;
+      padding: 0;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

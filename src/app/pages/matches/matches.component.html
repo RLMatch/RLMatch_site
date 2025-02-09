@@ -1,0 +1,41 @@
+<app-layout>
+  <div id="matches">
+    <header>
+      <h1>Matches</h1>
+      <p>Compete in matches to win prizes</p>
+    </header>
+    <div class="filters">
+      <div>
+        <button class="active">
+          <span>Available Matches | <span>50</span></span>
+        </button>
+        <button>
+          <span>Ongoing Matches | <span>100</span></span>
+        </button>
+      </div>
+      <div>
+        <select>
+          <option value="*">Any Mode</option>
+          <option value="1">1v1</option>
+          <option value="2">2v2</option>
+          <option value="3">3v3</option>
+        </select>
+        <select>
+          <option value="*">Any Region</option>
+          <option value="1">North America</option>
+          <option value="2">Europe</option>
+          <option value="3">Asia</option>
+        </select>
+        <select>
+          <option value="*">Any Platform</option>
+          <option value="1">PC</option>
+          <option value="2">PS4</option>
+          <option value="3">Xbox</option>
+        </select>
+      </div>
+    </div>
+    <div class="matches">
+      <app-match-list></app-match-list>
+    </div>
+  </div>
+</app-layout>

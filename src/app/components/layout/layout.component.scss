@@ -1,0 +1,24 @@
+#layout {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  overflow: hidden;
+
+  > main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    > div.container {
+      flex: 1;
+      padding: 0 100px;
+      overflow: scroll;
+
+      > div {
+        height: 100%;
+      }
+    }
+  }
+}
