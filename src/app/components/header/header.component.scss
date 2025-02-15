@@ -72,11 +72,37 @@
       overflow: hidden;
       padding: 0;
 
-      img {
+      > img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
       }
+    }
+  }
+
+  > div.auth {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    > button {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 7px 30px;
+      border-radius: 10px;
+    }
+
+    > button#login {
+      padding: 5px;
+    }
+
+    > button#register {
+      background-color: #8198E0;
     }
   }
 }

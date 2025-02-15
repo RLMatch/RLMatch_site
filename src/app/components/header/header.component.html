@@ -5,7 +5,7 @@
     </svg>
     <input type="search" placeholder="Search players...">
   </div>
-  <div class="infos">
+  <div class="infos" *ngIf="authService.isLoggedIn()">
     <div>
       <div class="token">
         <img src="assets/images/token.png" alt="Token">
@@ -19,5 +19,9 @@
     <div class="user">
       <img src="assets/images/avatar.png" alt="User">
     </div>
+  </div>
+  <div class="auth" *ngIf="!authService.isLoggedIn()">
+    <button id="login" (click)="openAuth('login')">Sign In</button>
+    <button id="register" (click)="openAuth('register')">Register</button>
   </div>
 </header>

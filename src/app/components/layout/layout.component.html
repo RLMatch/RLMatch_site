@@ -1,7 +1,7 @@
 <div id="layout">
   <app-sidebar></app-sidebar>
   <main>
-    <app-header></app-header>
+    <app-header (openAuthPopup)="openAuthPopup($event)"></app-header>
     <div class="container">
       <div>
         <ng-content></ng-content>
@@ -9,3 +9,5 @@
     </div>
   </main>
 </div>
+
+<app-auth [isVisible]="authPopup" [tab]="tabAuthPopup" (authClose)="closeAuthPopup()"></app-auth>

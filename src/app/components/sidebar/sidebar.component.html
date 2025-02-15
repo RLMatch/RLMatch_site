@@ -45,7 +45,7 @@
           </a></li>
         </ul>
       </div>
-      <div>
+      <div *ngIf="authService.isLoggedIn()">
         <h2>Profile</h2>
         <ul>
           <li><a routerLink="#" routerLinkActive="active">
@@ -88,7 +88,7 @@
       </ul>
     </div>
     <footer>
-      <button>Sign out</button>
+      <button *ngIf="authService.isLoggedIn()" (click)="logout()">Sign out</button>
     </footer>
   </main>
 </aside>

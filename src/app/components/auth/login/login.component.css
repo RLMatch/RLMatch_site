@@ -1,0 +1,103 @@
+#login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#login > header {
+  display: flex;
+  justify-content: space-between;
+}
+#login > header > h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+#login > header > button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+#login > header > button > svg {
+  fill: white;
+  width: 30px;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+#login > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#login > form > div.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#login > form > div.input-group > label {
+  font-size: 0.9rem;
+}
+#login > form > div.input-group > label > sup {
+  color: orange;
+}
+#login > form > div.input-group > input {
+  padding: 5px 10px;
+  background-color: #282F44;
+  border: 1px solid rgba(149, 149, 149, 0.5);
+  border-radius: 5px;
+  outline: none;
+  color: white;
+  font-size: 1.1rem;
+}
+#login > form > div.error {
+  color: #ff6464;
+  font-size: 0.9rem;
+}
+#login > form > button {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #8198E0;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+#login > footer {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#login > footer > div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+#login > footer > div > div {
+  flex: 1;
+  height: 1px;
+  background-color: white;
+}
+#login > footer > div:last-child {
+  font-size: 0.9rem;
+}
+#login > footer > div:last-child > button {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/*# sourceMappingURL=login.component.css.map */

@@ -4,6 +4,12 @@
   background-color: #333C56;
   padding: 20px;
   border-radius: 20px;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, clamp(200px, 25%, 300px));
+  justify-content: space-between;
+  grid-row-gap: 30px;
+  grid-column-gap: 30px;
 }
 
 /*# sourceMappingURL=match-list.component.css.map */
