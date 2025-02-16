@@ -1,3 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
 #matches {
   width: 100%;
   height: 100%;
@@ -11,12 +18,16 @@
     flex-direction: column;
 
     > h1 {
+      font-family: "Inter" ;
+      font-weight: 800;
       font-size: 4rem;
       margin: 0;
       padding: 0;
+      filter: drop-shadow(0 4mm 4mm black);
     }
 
     > p {
+      font-family: "Inter" ;
       font-size: 1rem;
       margin: 0;
       padding: 0;
@@ -27,6 +38,7 @@
     display: flex;
     flex-direction: row;
     gap: clamp(25px, 5vw, 50px);
+    
 
     > div {
       display: flex;
@@ -37,6 +49,7 @@
       border-radius: 10px;
       gap: 15px;
       box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+      
 
       > button {
         background-color: transparent;
@@ -46,6 +59,8 @@
         cursor: pointer;
         padding: 5px 10px;
         border-radius: 20px;
+        font-family: "Roboto";
+        font-weight: 600 ;
       }
 
       > button.active {
