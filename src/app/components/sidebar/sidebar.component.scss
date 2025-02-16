@@ -57,7 +57,7 @@
 
         > h2 {
           color: #959595;
-          font-size: clamp(0.8rem, 1.1vw, 1.3rem);
+          font-size: clamp(0.5rem, 0.8vw, 1.3rem);
           padding: 0;
           margin: 0;
         }
@@ -72,8 +72,8 @@
           
 
           > li {
-            border-radius: 10px;
-            line-height:50px;
+            border-radius: 20px;
+            line-height:3vh;
             
 
             > a {
