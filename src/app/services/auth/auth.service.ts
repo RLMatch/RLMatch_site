@@ -14,31 +14,35 @@ export class AuthService {
 
   constructor(private readonly http: HttpClient) { }
 
-  login(login: UserLogin): Observable<any> {
+  public login(login: UserLogin): Observable<any> {
     return this.http.post(AuthService.API_URL + '/auth/login', login);
   }
 
-  register(register: UserRegister): Observable<any> {
+  public register(register: UserRegister): Observable<any> {
     return this.http.post(AuthService.API_URL + '/auth/register', register);
   }
 
-  getToken(): string {
+  public verifyEmail(email: string, code: string): Observable<any> {
+    return this.http.post(AuthService.API_URL + '/auth/verify', { email, code });
+  }
+
+  public getToken(): string {
     return <string>localStorage.getItem(AuthService.TOKEN_KEY);
   }
 
-  setToken(token: string): void {
+  public setToken(token: string): void {
     localStorage.setItem(AuthService.TOKEN_KEY, token);
   }
 
-  removeToken(): void {
+  public removeToken(): void {
     localStorage.removeItem(AuthService.TOKEN_KEY);
   }
 
-  isLoggedIn() {
+  public isLoggedIn() {
     return !!this.getToken();
   }
 
-  logout() {
+  public logout() {
     this.removeToken();
   }
 }

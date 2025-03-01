@@ -1,6 +1,7 @@
 <div id="auth" *ngIf="isVisible" (click)="close()">
   <div class="popup" (click)="stopPropagation($event)">
     <app-login *ngIf="tab === 'login'"  (authShowRegister)="show($event)" (authClose)="close()"></app-login>
-    <app-register *ngIf="tab === 'register'" (authShowLogin)="show($event)" (authClose)="close()"></app-register>
+    <app-register *ngIf="tab === 'register'" (authShowLogin)="show($event)" (authClose)="close()" (authShowVerify)="show('verify-email', $event)"></app-register>
+    <app-verify-email *ngIf="tab === 'verify-email'" [userRegister]="userRegister" (authClose)="close()"></app-verify-email>
   </div>
 </div>

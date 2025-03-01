@@ -15,6 +15,7 @@ import { AuthService, UserRegister } from '../../../services/auth/auth.service';
 })
 export class RegisterComponent {
   @Output() authShowLogin = new EventEmitter<string>();
+  @Output() authShowVerify = new EventEmitter<{}>();
   @Output() authClose = new EventEmitter<void>();
   form: FormGroup = new FormGroup({
     username: new FormControl('', [
@@ -43,6 +44,10 @@ export class RegisterComponent {
     this.authShowLogin.emit('login');
   }
 
+  showVerify(data: {}) {
+    this.authShowVerify.emit(data);
+  }
+
   close() {
     this.authClose.emit();
   }
@@ -55,17 +60,14 @@ export class RegisterComponent {
         const userRegister: UserRegister = this.form.value;
         this.authService.register(userRegister).subscribe({
           next: (response) => {
-            if (response.error) {
+            console.log(response);
+            if (response !== null && response.error) {
               this.errorMessage = response.error;
             } else {
-              this.close();
-              this.authService.setToken(response.access_token);
+              this.showVerify(userRegister);
             }
           },
-          error: (error) => {
-            console.error(error);
-            this.errorMessage = 'An error occurred';
-          }
+          error: (error) => this.errorMessage = 'An error occurred'
         });
       }
     } else {

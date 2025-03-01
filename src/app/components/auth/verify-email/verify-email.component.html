@@ -1,0 +1,38 @@
+<div id="verify-email">
+  <header>
+    <div>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+          <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/>
+        </svg>
+      </button>
+      <button (click)="close()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+        </svg>
+      </button>
+    </div>
+    <div>
+      <h2>Verify Email</h2>
+    </div>
+  </header>
+  <body>
+    <p>Thank you for registering. Please check your email to verify your account. The code will expire in <span>00</span>
+      minutes</p>
+
+    <form [formGroup]="form" (submit)="verify()">
+      <label>Verification Code <sup>*</sup></label>
+      <div class="inputs">
+        <input type="text" formControlName="code_1" required maxlength="1" (input)="onInput($event, 1)">
+        <input type="text" formControlName="code_2" required maxlength="1" (input)="onInput($event, 2)">
+        <input type="text" formControlName="code_3" required maxlength="1" (input)="onInput($event, 3)">
+        <input type="text" formControlName="code_4" required maxlength="1" (input)="onInput($event, 4)">
+        <input type="text" formControlName="code_5" required maxlength="1" (input)="onInput($event, 5)">
+        <input type="text" formControlName="code_6" required maxlength="1" (input)="onInput($event, 6)">
+      </div>
+      <div class="error" *ngIf="errorMessage != null">{{ errorMessage }}</div>
+      <button type="submit">Verify</button>
+    </form>
+    <button (click)="resend()">Resend Verification Code</button>
+  </body>
+</div>

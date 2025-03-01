@@ -29,11 +29,11 @@ export class LoginComponent {
     ]),
   });
 
-  constructor(private readonly authService: AuthService) {
-  }
+  constructor(private readonly authService: AuthService) {}
 
   showRegister() {
     this.authShowRegister.emit('register');
+    console.log('show register');
   }
 
   close() {
@@ -53,7 +53,6 @@ export class LoginComponent {
           }
         },
         error: (error) => {
-          console.error(error);
           this.errorMessage = 'An error occurred';
         }
       });

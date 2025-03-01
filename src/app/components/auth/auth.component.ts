@@ -2,13 +2,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {VerifyEmailComponent} from './verify-email/verify-email.component';
+import {UserRegister} from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-auth',
   imports: [
     NgIf,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    VerifyEmailComponent
   ],
   templateUrl: './auth.component.html',
   standalone: true,
@@ -20,7 +23,12 @@ export class AuthComponent {
 
   @Output() authClose = new EventEmitter<void>();
 
-  show(tab: string) {
+  userRegister: UserRegister | null = null;
+
+  show(tab: string, data: {} = {}) {
+    if (tab === 'verify-email') {
+      this.userRegister = data as UserRegister;
+    }
     this.tab = tab;
     this.isVisible = true;
   }
