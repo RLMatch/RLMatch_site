@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 export type UserLogin = { email: string; password: string };
 export type UserRegister = { username: string; email: string; password: string };
@@ -9,7 +10,7 @@ export type UserRegister = { username: string; email: string; password: string }
   providedIn: 'root'
 })
 export class AuthService {
-  private static readonly API_URL = 'http://localhost:3000';
+  private static readonly API_URL = environment.apiUrl;
   private static readonly TOKEN_KEY = 'token';
 
   constructor(private readonly http: HttpClient) { }
